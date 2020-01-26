@@ -8,9 +8,12 @@ import Link from "@material-ui/core/Link";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      {"Made by "}
+      <Link
+        color="inherit"
+        href="https://www.linkedin.com/in/tomas-kukk-5686ab107"
+      >
+        Tomas Kukk
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
