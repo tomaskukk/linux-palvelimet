@@ -19,10 +19,16 @@ export default function Sources(props) {
   if (sourcesList) {
     return (
       <>
-        <Typography variant="h5">Sources used: </Typography>
+        <Typography variant="h6">Sources used: </Typography>
         <Typography className={classes.root}>
           {sourcesList.map(item => (
-            <Link key={item} href={item} onClick={preventDefault}>
+            <Link
+              key={item}
+              href={item}
+              target="_blank"
+              onClick={preventDefault}
+              rel="noopener nofollow"
+            >
               {item}
             </Link>
           ))}
