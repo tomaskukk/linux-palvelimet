@@ -6,6 +6,13 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import Header from "./Header";
 import Footer from "./Footer";
 import Homeworkone from "./Homeworkone";
+import Homeworktwo from "./Homeworktwo";
+import Homeworkthree from "./Homeworkthree";
+import Homeworkfour from "./Homeworkfour";
+import Homeworkfive from "./Homeworkfive";
+import Homeworksix from "./Homeworksix";
+import Homeworkseven from "./Homeworkseven";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -22,7 +29,22 @@ const useStyles = makeStyles(theme => ({
 
 const sections = [
   { title: "Homework one", url: "/homeworkone" },
-  { title: "Homework two", url: "/homeworktwo" }
+  { title: "Homework two", url: "/homeworktwo" },
+  { title: "Homework three", url: "/homeworkthree" },
+  { title: "Homework four", url: "/homeworkfour" },
+  { title: "Homework five", url: "/homeworkfive" },
+  { title: "Homework six", url: "/homeworksix" },
+  { title: "Homework seven", url: "/homeworkseven" }
+];
+
+const homeWorkComponents = [
+  <Homeworkone />,
+  <Homeworktwo />,
+  <Homeworkthree />,
+  <Homeworkfour />,
+  <Homeworkfive />,
+  <Homeworksix />,
+  <Homeworkseven />
 ];
 
 export default function Blog() {
@@ -34,6 +56,9 @@ export default function Blog() {
           <Header title="Linux-course homeworks" sections={sections} />
           <main>
             <Route path="/homeworkone" render={() => <Homeworkone />} />
+            {homeWorkComponents.map((item, i) => (
+              <Route path={sections[i].url} render={() => item} />
+            ))}
           </main>
         </Container>
         <Footer
