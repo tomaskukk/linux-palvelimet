@@ -13,13 +13,7 @@ import Homeworkfive from "./Homeworkfive";
 import Homeworksix from "./Homeworksix";
 import Homeworkseven from "./Homeworkseven";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -55,9 +49,12 @@ export default function Blog() {
         <Container maxWidth="lg">
           <Header title="Linux-course homeworks" sections={sections} />
           <main>
-            <Route path="/homeworkone" render={() => <Homeworkone />} />
             {homeWorkComponents.map((item, i) => (
-              <Route path={sections[i].url} render={() => item} />
+              <Route
+                key={sections[i].title}
+                path={sections[i].url}
+                render={() => item}
+              />
             ))}
           </main>
         </Container>

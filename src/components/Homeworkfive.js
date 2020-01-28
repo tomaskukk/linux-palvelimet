@@ -1,8 +1,6 @@
 import Paper from "@material-ui/core/Paper";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import image01b from "../img/01b.png";
-import image01a from "../img/01a.png";
 import Typography from "@material-ui/core/Typography";
 import Textandpicturegrid from "./Textandpicturegrid";
 import Sources from "./Sources";
@@ -31,14 +29,14 @@ const sourcesList = [];
 
 const sectionA = {
   title: "",
-  img: image01a,
+  img: "",
   text: "",
   imgTitle: ""
 };
 
 const sectionB = {
   title: "",
-  img: image01b,
+  img: "",
   text: "",
   imgTitle: ""
 };
