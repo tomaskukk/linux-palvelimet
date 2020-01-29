@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import Header from "./Header";
 import Footer from "./Footer";
 import Homeworkone from "./Homeworkone";
@@ -47,7 +46,7 @@ export default function Blog() {
       <Router>
         <CssBaseline />
         <Container maxWidth="lg">
-          <Header title="Linux-course homeworks" sections={sections} />
+          <Header title="<TomasKukk />" sections={sections} />
           <main>
             {homeWorkComponents.map((item, i) => (
               <Route

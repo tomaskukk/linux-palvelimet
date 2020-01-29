@@ -143,12 +143,15 @@ export default function Homeworkone() {
           <Grid item xs={6}>
             <Text title={sectionD.title} text={sectionD.text}></Text>
           </Grid>
+          <Grid item xs={6}>
+            <Text title={sectionE.title}></Text>
+            {sectionE.answerList.map(item => (
+              <p key={item}>{item}</p>
+            ))}{" "}
+          </Grid>
         </Grid>
       </div>
-      <Text title={sectionE.title}></Text>
-      {sectionE.answerList.map(item => (
-        <p key={item}>{item}</p>
-      ))}
+
       <Sources sourcesList={sourcesList}></Sources>
     </Paper>
   );

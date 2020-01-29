@@ -2,11 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
 import Typography from "@material-ui/core/Typography";
-import { Link, Redirect, withRouter } from "react-router-dom";
+import Dropdown from "./Dropdown";
+import { Link } from "react-router-dom";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -23,10 +22,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1),
     flexShrink: 0,
     textDecoration: "none",
-    color: "black",
-    "&:hover": {
-      color: "grey"
-    }
+    color: "black"
   }
 }));
 
@@ -45,7 +41,9 @@ export default function Header(props) {
           noWrap
           className={classes.toolbarTitle}
         >
-          {title}
+          <Link to="/" className={classes.toolbarLink}>
+            {"<TomasKukk />"}
+          </Link>
         </Typography>
       </Toolbar>
       <Toolbar
@@ -53,15 +51,7 @@ export default function Header(props) {
         variant="dense"
         className={classes.toolbarSecondary}
       >
-        {sections.map(section => (
-          <Link
-            key={section.title}
-            to={section.url}
-            className={classes.toolbarLink}
-          >
-            {section.title}
-          </Link>
-        ))}
+        <Dropdown Menuitems={sections} title="Linux-course" />
       </Toolbar>
     </React.Fragment>
   );
