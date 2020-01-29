@@ -44,6 +44,9 @@ export default function Header(props) {
           <Link to="/" className={classes.toolbarLink}>
             {"<TomasKukk />"}
           </Link>
+          <Link to="/login" className={classes.toolbarLink}>
+            {"Log in"}
+          </Link>
         </Typography>
       </Toolbar>
       <Toolbar

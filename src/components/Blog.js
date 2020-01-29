@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
@@ -11,6 +11,7 @@ import Homeworkfour from "./Homeworkfour";
 import Homeworkfive from "./Homeworkfive";
 import Homeworksix from "./Homeworksix";
 import Homeworkseven from "./Homeworkseven";
+import Login from "./Login";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -41,12 +42,19 @@ const homeWorkComponents = [
 ];
 
 export default function Blog() {
+  const [user, setUser] = useState(null);
+
+  const handleUserChange = user => {
+    setUser(user);
+  };
+
   return (
     <React.Fragment>
       <Router>
         <CssBaseline />
         <Container maxWidth="lg">
           <Header title="<TomasKukk />" sections={sections} />
+
           <main>
             {homeWorkComponents.map((item, i) => (
               <Route
@@ -55,6 +63,10 @@ export default function Blog() {
                 render={() => item}
               />
             ))}
+            <Route
+              path={"/login"}
+              render={() => <Login setUser={handleUserChange} />}
+            />
           </main>
         </Container>
         <Footer

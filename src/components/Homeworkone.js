@@ -94,11 +94,11 @@ const sectionD = {
   title:
     "d) Mitä lisenssiä kukin näistä ohjelmista käyttää? Selitä lyhyesti, mitä oikeuksia ja velvolisuuksia tuosta lisenssistä seuraa.",
   text: `Git ja htop ovat julkaistu lisenssillä GNU2(General Public License
-    version 2.0), joka on yksi avoimista lisensseistä. <br></br>
+    version 2.0), joka on yksi avoimista lisensseistä.
     Jos ohjelma käyttää GNU2 lisenssiä sitä saa käyttää, jakaa, kopioida,
     muokata ja käyttää opiskeluun vapaasti. Jos kuitenkin tekee muutoksia
     tällaiseen ohjelmaan, lisenssiä ei saa vaihtaa. Muutoksia tehdessä on
-    myös tehtävä selväksi, että tuotetta on muokattu. <br></br>Visual studio
+    myös tehtävä selväksi, että tuotetta on muokattu. Visual studio
     code on taas julkaistu MIT lisenssillä, joka on myös avoimien lisessien
     joukossa. MIT lisenssillä julkaistuja ohjelmia saa kuitenkin myydä
     eteenpäin toisella lisenssillä. Se on siis vielä vapaampi kuin GNU2
