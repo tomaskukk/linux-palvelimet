@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -29,7 +29,26 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const { sections, title } = props;
+  const { sections, title, user } = props;
+  console.log(user);
+  let loginOrLogoff = (
+    <>
+      <Link to="/signup">
+        <Button variant="outlined" size="small">
+          Sign up
+        </Button>
+      </Link>
+      <Link to="login">
+        <Button size="small">Log in</Button>
+      </Link>
+    </>
+  );
+
+  const handleSignOut = () => window.localStorage.removeItem("loggedUser");
+
+  if (user) {
+    loginOrLogoff = <Button onClick={handleSignOut}>Log out</Button>;
+  }
 
   return (
     <React.Fragment>
@@ -46,14 +65,7 @@ export default function Header(props) {
             {title}
           </Link>
         </Typography>
-        <Link to="/signup">
-          <Button variant="outlined" size="small">
-            Sign up
-          </Button>
-        </Link>
-        <Link to="login">
-          <Button size="small">Log in</Button>
-        </Link>
+        {loginOrLogoff}
       </Toolbar>
 
       <Toolbar

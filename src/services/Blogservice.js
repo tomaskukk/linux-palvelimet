@@ -5,14 +5,21 @@ let token = null;
 
 const setToken = newToken => {
   token = `bearer ${newToken}`;
+  console.log(token);
 };
 
 const getAll = () => {
-  const request = axios.get(baseUrl);
+  const config = {
+    headers: { Authorization: token }
+  };
+
+  const request = axios.get("/api/users/blogs", config);
   return request.then(response => response.data);
 };
 
 const create = async newObject => {
+  console.log("Token from create", token);
+
   const config = {
     headers: { Authorization: token }
   };

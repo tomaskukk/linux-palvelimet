@@ -47,9 +47,9 @@ export default function SignUp() {
         name,
         password
       });
-      setName(user);
       setUsername("");
       setPassword("");
+      setName("");
     } catch (exception) {
       setErrorMessage("Username must be unique.");
       setTimeout(() => {

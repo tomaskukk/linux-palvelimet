@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
 export default function Sources(props) {
   const classes = useStyles();
   const { sourcesList } = props;
-  const preventDefault = event => event.preventDefault();
 
   if (sourcesList) {
     return (
@@ -26,7 +25,6 @@ export default function Sources(props) {
               key={item}
               href={item}
               target="_blank"
-              onClick={preventDefault}
               rel="noopener nofollow"
             >
               {item}
