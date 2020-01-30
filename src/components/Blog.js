@@ -12,6 +12,7 @@ import Homeworkfive from "./Homeworkfive";
 import Homeworksix from "./Homeworksix";
 import Homeworkseven from "./Homeworkseven";
 import Login from "./Login";
+import Signup from "./Signup";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -42,12 +43,6 @@ const homeWorkComponents = [
 ];
 
 export default function Blog() {
-  const [user, setUser] = useState(null);
-
-  const handleUserChange = user => {
-    setUser(user);
-  };
-
   return (
     <React.Fragment>
       <Router>
@@ -63,10 +58,8 @@ export default function Blog() {
                 render={() => item}
               />
             ))}
-            <Route
-              path={"/login"}
-              render={() => <Login setUser={handleUserChange} />}
-            />
+            <Route path={"/login"} render={() => <Login />} />
+            <Route path={"/signup"} render={() => <Signup />} />
           </main>
         </Container>
         <Footer

@@ -3,12 +3,12 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import loginService from "../services/Login";
+import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import blogService from "../services/Blogservice";
+import signupService from "../services/Signup";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -23,33 +23,35 @@ const useStyles = makeStyles(theme => ({
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(3)
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
   }
 }));
 
-export default function SignIn({ setUser }) {
-  const classes = useStyles();
-
+export default function SignUp() {
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleLogin = async event => {
+  const classes = useStyles();
+
+  const handleSignup = async event => {
+    console.log("At handlesignup");
     event.preventDefault();
     try {
-      const user = await loginService.login({
+      const user = await signupService.signup({
         username,
+        name,
         password
       });
-      blogService.setToken(user.token);
+      setName(user);
       setUsername("");
       setPassword("");
     } catch (exception) {
-      console.log(exception);
-      setErrorMessage("Invalid credentials");
+      setErrorMessage("Username must be unique.");
       setTimeout(() => {
         setErrorMessage(null);
       }, 5000);
@@ -64,33 +66,48 @@ export default function SignIn({ setUser }) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign up
         </Typography>
-        <form className={classes.form} noValidate onSubmit={handleLogin}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Username"
-            name="username"
-            autoFocus
-            onChange={({ target }) => setUsername(target.value)}
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={({ target }) => setPassword(target.value)}
-          />
-
+        <form className={classes.form} onSubmit={handleSignup}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                autoComplete="name"
+                name="name"
+                variant="outlined"
+                required
+                fullWidth
+                id="Your name"
+                label="Name"
+                autoFocus
+                onChange={({ target }) => setName(target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="username"
+                label="Username"
+                name="username"
+                onChange={({ target }) => setUsername(target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                onChange={({ target }) => setPassword(target.value)}
+              />
+            </Grid>
+          </Grid>
           <Button
             type="submit"
             fullWidth
@@ -98,7 +115,7 @@ export default function SignIn({ setUser }) {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Sign Up
           </Button>
           <Typography variant="h5">{errorMessage}</Typography>
         </form>

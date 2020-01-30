@@ -3,7 +3,7 @@ const baseUrl = "/api/blogs";
 
 let token = null;
 
-const settoken = newToken => {
+const setToken = newToken => {
   token = `bearer ${newToken}`;
 };
 
@@ -26,4 +26,4 @@ const update = (id, newObject) => {
   return request.then(response => response.data);
 };
 
-export default { settoken, getAll, create, update };
+export default { setToken, getAll, create, update };
