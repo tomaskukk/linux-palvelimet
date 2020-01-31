@@ -5,10 +5,15 @@ let token = null;
 
 const setToken = newToken => {
   token = `bearer ${newToken}`;
-  console.log(token);
 };
 
 const getAll = () => {
+  const request = axios.get(baseUrl);
+  return request.then(response => response.data);
+};
+
+const getAllByUser = async () => {
+  console.log(token);
   const config = {
     headers: { Authorization: token }
   };
@@ -33,4 +38,4 @@ const update = (id, newObject) => {
   return request.then(response => response.data);
 };
 
-export default { setToken, getAll, create, update };
+export default { setToken, getAllByUser, create, update, getAll };

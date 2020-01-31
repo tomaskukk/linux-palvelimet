@@ -5,7 +5,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Dropdown from "./Dropdown";
 import { Link } from "react-router-dom";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
@@ -29,8 +28,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const { sections, title, user } = props;
-  console.log(user);
+  const { sections, title, user, handleChange } = props;
   let loginOrLogoff = (
     <>
       <Link to="/signup">
@@ -44,7 +42,10 @@ export default function Header(props) {
     </>
   );
 
-  const handleSignOut = () => window.localStorage.removeItem("loggedUser");
+  const handleSignOut = () => {
+    handleChange(null);
+    window.localStorage.removeItem("loggedUser");
+  };
 
   if (user) {
     loginOrLogoff = <Button onClick={handleSignOut}>Log out</Button>;
@@ -53,6 +54,9 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
+        <Link to="/newpost">
+          <Button>Create post</Button>
+        </Link>
         <Typography
           component="h2"
           variant="h5"

@@ -19,17 +19,26 @@ const useStyles = makeStyles(theme => ({
 
 export default function Newpost() {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [postTitle, setPostTitle] = useState("");
+  const [postContent, setPostContent] = useState("");
+
   const classes = useStyles();
 
   const handleBlogPost = async event => {
     event.preventDefault();
+    const content = [
+      {
+        title: postTitle,
+        content: postContent
+      }
+    ];
     try {
       const blogpost = await blogService.create({
         title,
         content
       });
-      setContent("");
+      setPostContent("");
+      setPostTitle("");
       setTitle("");
     } catch (exception) {
       console.log(exception);
@@ -50,12 +59,20 @@ export default function Newpost() {
           </FormControl>
           <FormControl fullWidth variant="outlined">
             <TextField
+              label="Post title"
+              id="blog-text"
+              variant="outlined"
+              onChange={({ target }) => setPostTitle(target.value)}
+            />
+          </FormControl>
+          <FormControl fullWidth variant="outlined">
+            <TextField
               label="Blog text"
               multiline
               rows="12"
               id="blog-text"
               variant="outlined"
-              onChange={({ target }) => setContent(target.value)}
+              onChange={({ target }) => setPostContent(target.value)}
             />
           </FormControl>
           <Button type="submit" variant="contained" color="primary">

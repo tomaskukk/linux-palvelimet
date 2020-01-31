@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignIn({ setUser }) {
+export default function SignIn({ handleChange }) {
   const classes = useStyles();
 
   const [username, setUsername] = useState("");
@@ -44,11 +44,11 @@ export default function SignIn({ setUser }) {
         username,
         password
       });
-
       window.localStorage.setItem("loggedUser", JSON.stringify(user));
       blogService.setToken(user.token);
       setUsername("");
       setPassword("");
+      console.log(handleChange(user));
     } catch (exception) {
       console.log(exception);
       setErrorMessage("Invalid credentials");
