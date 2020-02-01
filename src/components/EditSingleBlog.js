@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Container, Typography } from '@material-ui/core';
 import blogService from '../services/Blogservice';
+import { Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
@@ -27,27 +28,40 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SingleBlog({ blog }) {
+export default function EditSingleBlog({ blog, handleChange }) {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [redirect, setRedirect] = useState(null);
+  const classes = useStyles();
+
+  if (redirect) {
+    return <Redirect to={redirect} />;
+  }
+
   const handleBlogPost = async event => {
     event.preventDefault();
     try {
-      const blogpost = await blogService.update(blog.id, {
-        content: [
-          {
-            title: title,
-            content: content,
-          },
-        ],
-      });
-      setContent('');
-      setTitle('');
+      await blogService
+        .update(blog.id, {
+          content: [
+            {
+              title: title,
+              content: content,
+            },
+          ],
+        })
+        .then(response => {
+          console.log(response);
+          handleChange(response);
+          setContent('');
+          setTitle('');
+          setRedirect(`/blogs/${response.id}`);
+        });
     } catch (exception) {
       console.log(exception);
     }
   };
-  const classes = useStyles();
+
   const blogsToShow = () =>
     blog?.content?.map(b => (
       <Grid key={b.title} item xs={6}>
@@ -65,6 +79,7 @@ export default function SingleBlog({ blog }) {
               label="Title"
               id="blog-text"
               variant="outlined"
+              value={title}
               onChange={({ target }) => setTitle(target.value)}
             />
           </FormControl>
@@ -75,6 +90,7 @@ export default function SingleBlog({ blog }) {
               rows="12"
               id="blog-text"
               variant="outlined"
+              value={content}
               onChange={({ target }) => setContent(target.value)}
             />
           </FormControl>

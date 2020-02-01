@@ -27,18 +27,8 @@ const useStyles = makeStyles(theme => ({
 
 const sourcesList = [];
 
-export default function Blogs({ user }) {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    blogService.getAllByUser().then(blogs => setBlogs(blogs));
-  }, [user]);
+export default function Blogs({ user, handleChange, blogs }) {
   const classes = useStyles();
-
-  const handleDelete = id => {
-    blogService.del(id).then(resp => console.log(resp));
-    const updatedBlogs = blogs.filter(blog => blog.id !== id);
-    setBlogs(updatedBlogs);
-  };
 
   const blogsToShow = () =>
     blogs.map(blog => (
@@ -51,7 +41,7 @@ export default function Blogs({ user }) {
             edit this post
           </Link>
         </Button>
-        <Button onClick={() => handleDelete(blog.id)}>Delete</Button>
+        <Button onClick={() => handleChange(blog.id)}>Delete</Button>
       </li>
     ));
 

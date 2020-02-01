@@ -55,7 +55,7 @@ export default function SignIn({ handleChange }) {
       blogService.setToken(user.token);
       setUsernameAndPasswordToEmpty();
       handleChange(user);
-      setRedirect('/');
+      setRedirect('/blogs');
     } catch (exception) {
       setErrorMessage('Invalid credentials');
       setUsernameAndPasswordToEmpty();

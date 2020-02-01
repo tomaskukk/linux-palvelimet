@@ -4,9 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import { Link } from 'react-router-dom';
+import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles({
   card: {
@@ -23,7 +24,6 @@ const useStyles = makeStyles({
 export default function FeaturedPost(props) {
   const classes = useStyles();
   const { post } = props;
-  console.log(post);
   return (
     <Grid item xs={12} md={6}>
       <Card className={classes.card}>
@@ -45,6 +45,12 @@ export default function FeaturedPost(props) {
             </Typography>
           </CardContent>
         </div>
+        <Hidden xsDown>
+          <CardMedia
+            className={classes.cardMedia}
+            image="https://source.unsplash.com/random"
+          />
+        </Hidden>
       </Card>
     </Grid>
   );

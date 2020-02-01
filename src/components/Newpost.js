@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import { Container, Typography } from '@material-ui/core';
 import blogService from '../services/Blogservice';
+import { Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   mainPaper: {
@@ -17,10 +18,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Newpost() {
+export default function Newpost({ blogs, handleChange }) {
   const [title, setTitle] = useState('');
   const [postTitle, setPostTitle] = useState('');
   const [postContent, setPostContent] = useState('');
+  const [redirect, setRedirect] = useState(null);
 
   const classes = useStyles();
 
@@ -33,17 +35,26 @@ export default function Newpost() {
       },
     ];
     try {
-      const blogpost = await blogService.create({
-        title,
-        content,
-      });
-      setPostContent('');
-      setPostTitle('');
-      setTitle('');
+      const blogpost = await blogService
+        .create({
+          title,
+          content,
+        })
+        .then(response => {
+          handleChange(response);
+          console.log(response);
+          setPostContent('');
+          setPostTitle('');
+          setTitle('');
+        });
     } catch (exception) {
       console.log(exception);
     }
   };
+
+  if (redirect) {
+    return <Redirect to={redirect} />;
+  }
 
   return (
     <Paper align="center" className={classes.mainPaper}>
