@@ -5,12 +5,6 @@ import Container from "@material-ui/core/Container";
 import Header from "./Header";
 import Footer from "./Footer";
 import Homeworkone from "./Homeworkone";
-import Homeworktwo from "./Homeworktwo";
-import Homeworkthree from "./Homeworkthree";
-import Homeworkfour from "./Homeworkfour";
-import Homeworkfive from "./Homeworkfive";
-import Homeworksix from "./Homeworksix";
-import Homeworkseven from "./Homeworkseven";
 import Login from "./Login";
 import Signup from "./Signup";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -27,25 +21,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const sections = [
-  { title: "Homework one", url: "/homeworkone" },
-  { title: "Homework two", url: "/homeworktwo" },
-  { title: "Homework three", url: "/homeworkthree" },
-  { title: "Homework four", url: "/homeworkfour" },
-  { title: "Homework five", url: "/homeworkfive" },
-  { title: "Homework six", url: "/homeworksix" },
-  { title: "Homework seven", url: "/homeworkseven" }
-];
+const sections = [{ title: "Homework one", url: "/homeworkone" }];
 
-const homeWorkComponents = [
-  <Homeworkone />,
-  <Homeworktwo />,
-  <Homeworkthree />,
-  <Homeworkfour />,
-  <Homeworkfive />,
-  <Homeworksix />,
-  <Homeworkseven />
-];
+const homeWorkComponents = [<Homeworkone />];
 
 export default function Blog() {
   const [user, setUser] = useState(null);
@@ -90,13 +68,7 @@ export default function Blog() {
           />
 
           <main>
-            {homeWorkComponents.map((item, i) => (
-              <Route
-                key={sections[i].title}
-                path={sections[i].url}
-                render={() => item}
-              />
-            ))}
+            <Route path={"/homeworkone"} render={() => <Homeworkone />} />
             <Route
               path={"/login"}
               render={() => <Login handleChange={handleUserChange} />}

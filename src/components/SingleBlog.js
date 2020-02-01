@@ -39,11 +39,14 @@ export default function SingleBlog({ blog }) {
         <Typography variant="h3" align="center">
           {blog?.title}
         </Typography>
+
         <Grid container spacing={3}>
           {blogsToShow()}
         </Grid>
       </div>
       <Sources sourcesList={sourcesList}></Sources>
+      <Typography variant="h5">{blog?.user?.name}</Typography>
+      <Typography variant="body1">{blog?.date}</Typography>
     </Paper>
   );
 }

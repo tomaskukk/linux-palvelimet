@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Dropdown from "./Dropdown";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
@@ -76,9 +75,7 @@ export default function Header(props) {
         component="nav"
         variant="dense"
         className={classes.toolbarSecondary}
-      >
-        <Dropdown Menuitems={sections} title="Linux-course" />
-      </Toolbar>
+      ></Toolbar>
     </React.Fragment>
   );
 }
