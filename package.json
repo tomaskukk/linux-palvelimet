@@ -26,6 +26,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "prettier": "@azz/prettier-config",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -37,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@azz/prettier-config": "^1.0.0"
   }
 }
