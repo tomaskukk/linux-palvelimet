@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import Header from './Header';
-import Footer from './Footer';
-import Homeworkone from './Homeworkone';
-import Login from './Login';
-import Signup from './Signup';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Newpost from './Newpost';
-import Blogs from './Blogs';
-import blogService from '../services/Blogservice';
-import SingleBlog from './SingleBlog';
-import Home from './Home';
-import EditSingleBlog from './EditSingleBlog';
+import React, { useEffect, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+import Header from "./Header";
+import Footer from "./Footer";
+import Homeworkone from "./Homeworkone";
+import Homeworktwo from "./Homeworktwo";
+import Login from "./Login";
+import Signup from "./Signup";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Newpost from "./Newpost";
+import Blogs from "./Blogs";
+import blogService from "../services/Blogservice";
+import SingleBlog from "./SingleBlog";
+import Home from "./Home";
+import EditSingleBlog from "./EditSingleBlog";
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
-    marginTop: theme.spacing(3),
-  },
+    marginTop: theme.spacing(3)
+  }
 }));
 
-const sections = [{ title: 'Homework one', url: '/homeworkone' }];
+const sections = [{ title: "Homework one", url: "/homeworkone" }];
 
 const homeWorkComponents = [<Homeworkone />];
 
@@ -30,7 +31,7 @@ export default function Blog() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedUser');
+    const loggedUserJSON = window.localStorage.getItem("loggedUser");
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON);
       blogService.setToken(user.token);
@@ -45,7 +46,7 @@ export default function Blog() {
   };
 
   const handleUserChange = user => {
-    console.log('setting user');
+    console.log("setting user");
     setUser(user?.name);
   };
 
@@ -72,22 +73,24 @@ export default function Blog() {
           />
 
           <main>
-            <Route path={'/homeworkone'} render={() => <Homeworkone />} />
+            <Route path={"/homeworkone"} render={() => <Homeworkone />} />
+            <Route path={"/homeworktwo"} render={() => <Homeworktwo />} />
+
             <Route
-              path={'/login'}
+              path={"/login"}
               render={() => <Login handleChange={handleUserChange} />}
             />
-            <Route path={'/signup'} render={() => <Signup />} />
+            <Route path={"/signup"} render={() => <Signup />} />
             <Route
-              path={'/newpost'}
+              path={"/newpost"}
               render={() => (
                 <Newpost blogs={blogs} handleChange={handleBlogChange} />
               )}
             />
-            <Route exact path={'/'} render={() => <Home blogs={blogs} />} />
+            <Route exact path={"/"} render={() => <Home blogs={blogs} />} />
             <Route
               exact
-              path={'/blogs'}
+              path={"/blogs"}
               render={() => (
                 <Blogs
                   user={user}

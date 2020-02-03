@@ -38,7 +38,12 @@ const sourcesList = [
 const sectionA = {
   title:
     "a) Tee oma Linux-livetikku. Kokeile sitä jossain muussa kuin koulun koneessa.",
-  img: image01a,
+  imgs: [
+    {
+      src: image01a,
+      title: "Rufus"
+    }
+  ],
   text: `Kävin aluksi ostamassa muistitikun (Kingston usb 3.0)
   saiturinpörssistä josta teen livetikun. Kytkin usb-tikun koneeseen
   ja ryhdyin hommiin. Aluksi menin lataamaan rufus ohjelman jolla
@@ -54,21 +59,24 @@ const sectionA = {
   koneeni ja ubuntu tuli esiin. Ensimmäisenä kokeilin 'sudo lshw
   -short -sanitize' komentoa joka jumitti kohtaan PCI (sysfs).
   Koitin googlailla ongelmaan ratkaisun joten hiiri, näppäimistö ja
-  internet-yhteys toimi.`,
-  imgTitle: "Rufus"
+  internet-yhteys toimi.`
 };
 
 const sectionB = {
   title: "b) Listaa testaamasi koneen rauta (‘sudo lshw -short -sanitize’).",
-  img: image01b,
+  imgs: [
+    {
+      src: image01b,
+      title: "lshw -short -sanitize"
+    }
+  ],
   text: `Aluksi terminaali vastasi annetuun komentoon PCI (sysfs) ja jäi
   siihen jumiin. Huomasin samalla että näppäimistön kieli oli väärä,
   joten koitin mennä asetuksiin. Kun avasin asetukset, näyttö jäätyi
   ja mitään en voinut enää tehdä. Ratkaisu oli käynnistäessä konetta
   painaa e näppäintä ja lisätä 'nomodeset' ennen 'quiet splash'
   sanoja. Tein saman konfiguraation myös tiedostoon /etc/default/grup.
-  Tämä Korjasi ongelmani ja komento toimi odotetusti.`,
-  imgTitle: "lshw -short -sanitize"
+  Tämä Korjasi ongelmani ja komento toimi odotetusti.`
 };
 
 const sectionC = {
@@ -123,17 +131,17 @@ export default function Homeworkone() {
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <Textandpicturegrid
+              size={12}
               title={sectionA.title}
-              imgTitle={sectionA.imgTitle}
-              imgSrc={sectionA.img}
+              imgs={sectionA.imgs}
               text={sectionA.text}
             />{" "}
           </Grid>
           <Grid item xs={6}>
             <Textandpicturegrid
+              size={12}
               title={sectionB.title}
-              imgSrc={sectionB.img}
-              imgTitle={sectionB.imgTitle}
+              imgs={sectionB.imgs}
               text={sectionB.text}
             />{" "}
           </Grid>
