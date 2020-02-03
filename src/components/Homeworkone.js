@@ -1,36 +1,38 @@
-import Paper from '@material-ui/core/Paper';
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Textandpicturegrid from './Textandpicturegrid';
-import Sources from './Sources';
-import Text from './Text';
-import Grid from '@material-ui/core/Grid';
-import Imgcard from './Imgcard';
+import Paper from "@material-ui/core/Paper";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import image01a from "../img/01a.png";
+import image01b from "../img/01b.png";
+import Textandpicturegrid from "./Textandpicturegrid";
+import Sources from "./Sources";
+import Text from "./Text";
+import Grid from "@material-ui/core/Grid";
+import Imgcard from "./Imgcard";
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
-    position: 'relative',
+    position: "relative",
     padding: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
-    },
+    [theme.breakpoints.up("md")]: {
+      padding: theme.spacing(6)
+    }
   },
   mainContainer: {
     padding: theme.spacing(3),
-    flexGrow: 1,
+    flexGrow: 1
   },
   root: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 }));
 
 const sourcesList = [
-  'https://git-scm.com/about/free-and-open-source',
-  'https://github.com/microsoft/vscode/blob/master/LICENSE.txt',
-  'https://github.com/hishamhm/htop',
-  'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html',
-  'http://www.clamav.net/',
+  "https://git-scm.com/about/free-and-open-source",
+  "https://github.com/microsoft/vscode/blob/master/LICENSE.txt",
+  "https://github.com/hishamhm/htop",
+  "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html",
+  "http://www.clamav.net/"
 ];
 
 const sectionA = {
@@ -57,15 +59,6 @@ const sectionA = {
   koneeni ja ubuntu tuli esiin. Ensimmäisenä kokeilin 'sudo lshw
   -short -sanitize' komentoa joka jumitti kohtaan PCI (sysfs).
   Koitin googlailla ongelmaan ratkaisun joten hiiri, näppäimistö ja
-<<<<<<< HEAD
-  internet-yhteys toimi.`,
-  imgTitle: 'Rufus',
-};
-
-const sectionB = {
-  title: 'b) Listaa testaamasi koneen rauta (‘sudo lshw -short -sanitize’).',
-  img: '',
-=======
   internet-yhteys toimi.`
 };
 
@@ -77,24 +70,18 @@ const sectionB = {
       title: "lshw -short -sanitize"
     }
   ],
->>>>>>> 4294313d691c1ec5388e3bc94d5e49cd942f974d
   text: `Aluksi terminaali vastasi annetuun komentoon PCI (sysfs) ja jäi
   siihen jumiin. Huomasin samalla että näppäimistön kieli oli väärä,
   joten koitin mennä asetuksiin. Kun avasin asetukset, näyttö jäätyi
   ja mitään en voinut enää tehdä. Ratkaisu oli käynnistäessä konetta
   painaa e näppäintä ja lisätä 'nomodeset' ennen 'quiet splash'
   sanoja. Tein saman konfiguraation myös tiedostoon /etc/default/grup.
-<<<<<<< HEAD
-  Tämä Korjasi ongelmani ja komento toimi odotetusti.`,
-  imgTitle: 'lshw -short -sanitize',
-=======
   Tämä Korjasi ongelmani ja komento toimi odotetusti.`
->>>>>>> 4294313d691c1ec5388e3bc94d5e49cd942f974d
 };
 
 const sectionC = {
   title:
-    'c) Asenna kolme itsellesi uutta ohjelmaa. Kokeile kutakin ohjelmaa senpääasiallisessa käyttötarkoituksessa.',
+    "c) Asenna kolme itsellesi uutta ohjelmaa. Kokeile kutakin ohjelmaa senpääasiallisessa käyttötarkoituksessa.",
   text: `Aluksi avasin terminaalin painamalla ctrl+alt+t. Terminaalissa ajoin
   'sudo apt-get update && sudo apt-get upgrade'. Tämän jälkeen asensin
   htop ohjelman ajamalla komennon sudo apt-get install -y htop. Seuraavana
@@ -108,12 +95,12 @@ const sectionC = {
   tietokoneeni suoritustietoja ja muistin tilanteen käyttöjärjestelmässä.
   Visual studiota ja gittiä kokeilin avaamalla vs coden ja luomalla uuden
   projektin. Alustin uuden react projektin (tämä kyseinen verkkosivusto)
-  ja puskin sen github repositoryyn käyttämällä git cli:tä.`,
+  ja puskin sen github repositoryyn käyttämällä git cli:tä.`
 };
 
 const sectionD = {
   title:
-    'd) Mitä lisenssiä kukin näistä ohjelmista käyttää? Selitä lyhyesti, mitä oikeuksia ja velvolisuuksia tuosta lisenssistä seuraa.',
+    "d) Mitä lisenssiä kukin näistä ohjelmista käyttää? Selitä lyhyesti, mitä oikeuksia ja velvolisuuksia tuosta lisenssistä seuraa.",
   text: `Git ja htop ovat julkaistu lisenssillä GNU2(General Public License
     version 2.0), joka on yksi avoimista lisensseistä.
     Jos ohjelma käyttää GNU2 lisenssiä sitä saa käyttää, jakaa, kopioida,
@@ -123,7 +110,7 @@ const sectionD = {
     code on taas julkaistu MIT lisenssillä, joka on myös avoimien lisessien
     joukossa. MIT lisenssillä julkaistuja ohjelmia saa kuitenkin myydä
     eteenpäin toisella lisenssillä. Se on siis vielä vapaampi kuin GNU2
-    lisenssi.`,
+    lisenssi.`
 };
 
 const sectionE = {
@@ -131,10 +118,10 @@ const sectionE = {
   (esim. Tekstinkäsittely) ja vastaava vapaa Linux-ohjelma (esim. LibreOffice Writer). 
   Jos johonkin tarkoitukseen ei löydy vapaataLinux-ohjelmaa, listaa sekin.`,
   answerList: [
-    'Avast antivirus - ClamAV',
-    'Microsoft Powerpoint - LibreOffice Impress',
-    'Docker for Windows - Docker',
-  ],
+    "Avast antivirus - ClamAV",
+    "Microsoft Powerpoint - LibreOffice Impress",
+    "Docker for Windows - Docker"
+  ]
 };
 export default function Homeworkone() {
   const classes = useStyles();
@@ -148,7 +135,7 @@ export default function Homeworkone() {
               title={sectionA.title}
               imgs={sectionA.imgs}
               text={sectionA.text}
-            />{' '}
+            />{" "}
           </Grid>
           <Grid item xs={6}>
             <Textandpicturegrid
@@ -156,7 +143,7 @@ export default function Homeworkone() {
               title={sectionB.title}
               imgs={sectionB.imgs}
               text={sectionB.text}
-            />{' '}
+            />{" "}
           </Grid>
           <Grid item xs={6}>
             <Text title={sectionC.title} text={sectionC.text}></Text>
@@ -168,7 +155,7 @@ export default function Homeworkone() {
             <Text title={sectionE.title}></Text>
             {sectionE.answerList.map(item => (
               <p key={item}>{item}</p>
-            ))}{' '}
+            ))}{" "}
           </Grid>
         </Grid>
       </div>

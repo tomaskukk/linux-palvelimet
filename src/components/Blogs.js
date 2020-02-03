@@ -1,28 +1,28 @@
-import Paper from '@material-ui/core/Paper';
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import blogService from '../services/Blogservice';
-import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
+import Paper from "@material-ui/core/Paper";
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import blogService from "../services/Blogservice";
+import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
-    position: 'relative',
+    position: "relative",
     padding: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
-    },
+    [theme.breakpoints.up("md")]: {
+      padding: theme.spacing(6)
+    }
   },
   mainContainer: {
     padding: theme.spacing(3),
-    flexGrow: 1,
+    flexGrow: 1
   },
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
-  link: { padding: theme.spacing(1), textDecoration: 'none', color: 'black' },
+  link: { padding: theme.spacing(1), textDecoration: "none", color: "black" }
 }));
 
 const sourcesList = [];
@@ -33,9 +33,11 @@ export default function Blogs({ user, handleChange, blogs }) {
   const blogsToShow = () =>
     blogs.map(blog => (
       <li key={blog.title}>
-        <Link className={classes.link} to={`/blogs/${blog.id}`}>
-          {blog.title}
-        </Link>
+        <Button>
+          <Link className={classes.link} to={`/blogs/${blog.id}`}>
+            {blog.title}
+          </Link>
+        </Button>
         <Button size="small" variant="outlined">
           <Link className={classes.link} to={`/blogs/edit/${blog.id}`}>
             edit this post
@@ -56,5 +58,5 @@ export default function Blogs({ user, handleChange, blogs }) {
 }
 
 Blogs.propTypes = {
-  user: PropTypes.string,
+  user: PropTypes.string
 };

@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import FormControl from '@material-ui/core/FormControl';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
-import { Container, Typography } from '@material-ui/core';
-import blogService from '../services/Blogservice';
-import { Redirect } from 'react-router-dom';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import FormControl from "@material-ui/core/FormControl";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Paper from "@material-ui/core/Paper";
+import { Container, Typography } from "@material-ui/core";
+import blogService from "../services/Blogservice";
+import { Redirect } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   mainPaper: {
-    padding: theme.spacing(4, 0),
+    padding: theme.spacing(4, 0)
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1)
   },
+  formInput: {
+    padding: theme.spacing(2, 0)
+  }
 }));
 
 export default function Newpost({ blogs, handleChange }) {
-  const [title, setTitle] = useState('');
-  const [postTitle, setPostTitle] = useState('');
-  const [postContent, setPostContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [postTitle, setPostTitle] = useState("");
+  const [postContent, setPostContent] = useState("");
   const [redirect, setRedirect] = useState(null);
 
   const classes = useStyles();
@@ -31,21 +34,21 @@ export default function Newpost({ blogs, handleChange }) {
     const content = [
       {
         title: postTitle,
-        content: postContent,
-      },
+        content: postContent
+      }
     ];
     try {
       const blogpost = await blogService
         .create({
           title,
-          content,
+          content
         })
         .then(response => {
           handleChange(response);
           console.log(response);
-          setPostContent('');
-          setPostTitle('');
-          setTitle('');
+          setPostContent("");
+          setPostTitle("");
+          setTitle("");
         });
     } catch (exception) {
       console.log(exception);
@@ -57,11 +60,17 @@ export default function Newpost({ blogs, handleChange }) {
   }
 
   return (
-    <Paper align="center" className={classes.mainPaper}>
+    <Paper className={classes.mainPaper}>
       <Container maxWidth="md">
+        <Typography variant="h5">Create a new blog</Typography>
         <form className={classes.form} onSubmit={handleBlogPost}>
-          <FormControl fullWidth variant="outlined">
+          <FormControl
+            className={classes.formInput}
+            fullWidth
+            variant="outlined"
+          >
             <TextField
+              multiline
               label="Blog title"
               id="blog-text"
               variant="outlined"
@@ -69,7 +78,11 @@ export default function Newpost({ blogs, handleChange }) {
               onChange={({ target }) => setTitle(target.value)}
             />
           </FormControl>
-          <FormControl fullWidth variant="outlined">
+          <FormControl
+            className={classes.formInput}
+            fullWidth
+            variant="outlined"
+          >
             <TextField
               label="Post title"
               id="blog-text"
@@ -78,7 +91,11 @@ export default function Newpost({ blogs, handleChange }) {
               onChange={({ target }) => setPostTitle(target.value)}
             />
           </FormControl>
-          <FormControl fullWidth variant="outlined">
+          <FormControl
+            className={classes.formInput}
+            fullWidth
+            variant="outlined"
+          >
             <TextField
               label="Blog text"
               multiline

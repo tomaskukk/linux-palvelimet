@@ -1,5 +1,5 @@
-import axios from 'axios';
-const baseUrl = '/api/blogs';
+import axios from "axios";
+const baseUrl = "/api/blogs";
 
 let token = null;
 
@@ -15,18 +15,18 @@ const getAll = () => {
 const getAllByUser = async () => {
   console.log(token);
   const config = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
-  const request = axios.get('/api/users/blogs', config);
+  const request = axios.get("/api/users/blogs", config);
   return request.then(response => response.data);
 };
 
 const create = async newObject => {
-  console.log('Token from create', token);
+  console.log("Token from create", token);
 
   const config = {
-    headers: { Authorization: token },
+    headers: { Authorization: token }
   };
 
   const response = await axios.post(baseUrl, newObject, config);
@@ -34,12 +34,18 @@ const create = async newObject => {
 };
 
 const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject);
+  const config = {
+    headers: { Authorization: token }
+  };
+  const request = axios.put(`${baseUrl}/${id}`, newObject, config);
   return request.then(response => response.data);
 };
 
 const del = id => {
-  const request = axios.delete(`${baseUrl}/${id}`);
+  const config = {
+    headers: { Authorization: token }
+  };
+  const request = axios.delete(`${baseUrl}/${id}`, config);
   return request.then(response => response.data);
 };
 
