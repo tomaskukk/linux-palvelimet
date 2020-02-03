@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Textandpicturegrid(props) {
-  const { title, imgSrc, imgTitle, text } = props;
+  const { title, imgs, text, size } = props;
   const classes = useStyles();
 
   return (
@@ -26,7 +26,13 @@ export default function Textandpicturegrid(props) {
       <Typography variant="body1" color="inherit">
         {text}
       </Typography>
-      <Imgcard imgSrc={imgSrc} imgTitle={imgTitle}></Imgcard>
+      <Grid container>
+        {imgs.map(img => (
+          <Grid item xs={size}>
+            <Imgcard imgSrc={img.src} imgTitle={img.title}></Imgcard>
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 }
