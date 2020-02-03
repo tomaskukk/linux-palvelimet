@@ -1,44 +1,42 @@
-import Paper from "@material-ui/core/Paper";
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import image01b from "../img/01b.png";
-import image01a from "../img/01a.png";
-import Typography from "@material-ui/core/Typography";
-import Textandpicturegrid from "./Textandpicturegrid";
-import Sources from "./Sources";
-import Text from "./Text";
-import Grid from "@material-ui/core/Grid";
-import Imgcard from "./Imgcard";
+import Paper from '@material-ui/core/Paper';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Textandpicturegrid from './Textandpicturegrid';
+import Sources from './Sources';
+import Text from './Text';
+import Grid from '@material-ui/core/Grid';
+import Imgcard from './Imgcard';
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
-    position: "relative",
+    position: 'relative',
     padding: theme.spacing(3),
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(6)
-    }
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(6),
+    },
   },
   mainContainer: {
     padding: theme.spacing(3),
-    flexGrow: 1
+    flexGrow: 1,
   },
   root: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }));
 
 const sourcesList = [
-  "https://git-scm.com/about/free-and-open-source",
-  "https://github.com/microsoft/vscode/blob/master/LICENSE.txt",
-  "https://github.com/hishamhm/htop",
-  "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html",
-  "http://www.clamav.net/"
+  'https://git-scm.com/about/free-and-open-source',
+  'https://github.com/microsoft/vscode/blob/master/LICENSE.txt',
+  'https://github.com/hishamhm/htop',
+  'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html',
+  'http://www.clamav.net/',
 ];
 
 const sectionA = {
   title:
-    "a) Tee oma Linux-livetikku. Kokeile sitä jossain muussa kuin koulun koneessa.",
-  img: image01a,
+    'a) Tee oma Linux-livetikku. Kokeile sitä jossain muussa kuin koulun koneessa.',
+  img: '',
   text: `Kävin aluksi ostamassa muistitikun (Kingston usb 3.0)
   saiturinpörssistä josta teen livetikun. Kytkin usb-tikun koneeseen
   ja ryhdyin hommiin. Aluksi menin lataamaan rufus ohjelman jolla
@@ -55,12 +53,12 @@ const sectionA = {
   -short -sanitize' komentoa joka jumitti kohtaan PCI (sysfs).
   Koitin googlailla ongelmaan ratkaisun joten hiiri, näppäimistö ja
   internet-yhteys toimi.`,
-  imgTitle: "Rufus"
+  imgTitle: 'Rufus',
 };
 
 const sectionB = {
-  title: "b) Listaa testaamasi koneen rauta (‘sudo lshw -short -sanitize’).",
-  img: image01b,
+  title: 'b) Listaa testaamasi koneen rauta (‘sudo lshw -short -sanitize’).',
+  img: '',
   text: `Aluksi terminaali vastasi annetuun komentoon PCI (sysfs) ja jäi
   siihen jumiin. Huomasin samalla että näppäimistön kieli oli väärä,
   joten koitin mennä asetuksiin. Kun avasin asetukset, näyttö jäätyi
@@ -68,12 +66,12 @@ const sectionB = {
   painaa e näppäintä ja lisätä 'nomodeset' ennen 'quiet splash'
   sanoja. Tein saman konfiguraation myös tiedostoon /etc/default/grup.
   Tämä Korjasi ongelmani ja komento toimi odotetusti.`,
-  imgTitle: "lshw -short -sanitize"
+  imgTitle: 'lshw -short -sanitize',
 };
 
 const sectionC = {
   title:
-    "c) Asenna kolme itsellesi uutta ohjelmaa. Kokeile kutakin ohjelmaa senpääasiallisessa käyttötarkoituksessa.",
+    'c) Asenna kolme itsellesi uutta ohjelmaa. Kokeile kutakin ohjelmaa senpääasiallisessa käyttötarkoituksessa.',
   text: `Aluksi avasin terminaalin painamalla ctrl+alt+t. Terminaalissa ajoin
   'sudo apt-get update && sudo apt-get upgrade'. Tämän jälkeen asensin
   htop ohjelman ajamalla komennon sudo apt-get install -y htop. Seuraavana
@@ -87,12 +85,12 @@ const sectionC = {
   tietokoneeni suoritustietoja ja muistin tilanteen käyttöjärjestelmässä.
   Visual studiota ja gittiä kokeilin avaamalla vs coden ja luomalla uuden
   projektin. Alustin uuden react projektin (tämä kyseinen verkkosivusto)
-  ja puskin sen github repositoryyn käyttämällä git cli:tä.`
+  ja puskin sen github repositoryyn käyttämällä git cli:tä.`,
 };
 
 const sectionD = {
   title:
-    "d) Mitä lisenssiä kukin näistä ohjelmista käyttää? Selitä lyhyesti, mitä oikeuksia ja velvolisuuksia tuosta lisenssistä seuraa.",
+    'd) Mitä lisenssiä kukin näistä ohjelmista käyttää? Selitä lyhyesti, mitä oikeuksia ja velvolisuuksia tuosta lisenssistä seuraa.',
   text: `Git ja htop ovat julkaistu lisenssillä GNU2(General Public License
     version 2.0), joka on yksi avoimista lisensseistä.
     Jos ohjelma käyttää GNU2 lisenssiä sitä saa käyttää, jakaa, kopioida,
@@ -102,7 +100,7 @@ const sectionD = {
     code on taas julkaistu MIT lisenssillä, joka on myös avoimien lisessien
     joukossa. MIT lisenssillä julkaistuja ohjelmia saa kuitenkin myydä
     eteenpäin toisella lisenssillä. Se on siis vielä vapaampi kuin GNU2
-    lisenssi.`
+    lisenssi.`,
 };
 
 const sectionE = {
@@ -110,10 +108,10 @@ const sectionE = {
   (esim. Tekstinkäsittely) ja vastaava vapaa Linux-ohjelma (esim. LibreOffice Writer). 
   Jos johonkin tarkoitukseen ei löydy vapaataLinux-ohjelmaa, listaa sekin.`,
   answerList: [
-    "Avast antivirus - ClamAV",
-    "Microsoft Powerpoint - LibreOffice Impress",
-    "Docker for Windows - Docker"
-  ]
+    'Avast antivirus - ClamAV',
+    'Microsoft Powerpoint - LibreOffice Impress',
+    'Docker for Windows - Docker',
+  ],
 };
 export default function Homeworkone() {
   const classes = useStyles();
@@ -127,7 +125,7 @@ export default function Homeworkone() {
               imgTitle={sectionA.imgTitle}
               imgSrc={sectionA.img}
               text={sectionA.text}
-            />{" "}
+            />{' '}
           </Grid>
           <Grid item xs={6}>
             <Textandpicturegrid
@@ -135,7 +133,7 @@ export default function Homeworkone() {
               imgSrc={sectionB.img}
               imgTitle={sectionB.imgTitle}
               text={sectionB.text}
-            />{" "}
+            />{' '}
           </Grid>
           <Grid item xs={6}>
             <Text title={sectionC.title} text={sectionC.text}></Text>
@@ -147,7 +145,7 @@ export default function Homeworkone() {
             <Text title={sectionE.title}></Text>
             {sectionE.answerList.map(item => (
               <p key={item}>{item}</p>
-            ))}{" "}
+            ))}{' '}
           </Grid>
         </Grid>
       </div>
