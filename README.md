@@ -1,4 +1,4 @@
-# Weather-application
+# Website for linux course
 
 Website to return linux-course exercises
 
