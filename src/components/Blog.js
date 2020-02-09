@@ -13,9 +13,9 @@ import blogService from "../services/Blogservice";
 import SingleBlog from "./SingleBlog";
 import Home from "./Home";
 import EditSingleBlog from "./EditSingleBlog";
-
-const Homeworkone = lazy(() => import("./Homeworkone"));
-const Homeworktwo = lazy(() => import("./Homeworktwo"));
+import Homeworkone from "./Homeworkone";
+import Homeworktwo from "./Homeworktwo";
+import Homeworkthree from "./Homeworkthree";
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -79,54 +79,53 @@ export default function Blog() {
           />
 
           <main>
-            <Suspense>
-              <Route path={"/homeworkone"} render={() => <Homeworkone />} />
-              <Route path={"/homeworktwo"} render={() => <Homeworktwo />} />
+            <Route path={"/homeworkone"} render={() => <Homeworkone />} />
+            <Route path={"/homeworktwo"} render={() => <Homeworktwo />} />
+            <Route path={"/homeworkthree"} render={() => <Homeworkthree />} />
 
-              <Route
-                path={"/login"}
-                render={() => <Login handleChange={handleUserChange} />}
-              />
-              <Route path={"/signup"} render={() => <Signup />} />
-              <Route
-                path={"/newpost"}
-                render={() => (
-                  <Newpost blogs={blogs} handleChange={handleBlogChange} />
-                )}
-              />
-              <Route exact path={"/"} render={() => <Home blogs={blogs} />} />
-              <Route
-                exact
-                path={"/blogs"}
-                render={() => (
-                  <Blogs
-                    user={user}
-                    blogs={blogs?.filter(blog => blog?.user?.name === user)}
-                    handleChange={handleDelete}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/blogs/:id"
-                render={({ match }) => (
-                  <SingleBlog
-                    handleChange={handleBlogChange}
-                    blog={blogById(match.params.id)}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/blogs/edit/:id"
-                render={({ match }) => (
-                  <EditSingleBlog
-                    blog={blogById(match.params.id)}
-                    handleChange={handleBlogUpdate}
-                  />
-                )}
-              />
-            </Suspense>
+            <Route
+              path={"/login"}
+              render={() => <Login handleChange={handleUserChange} />}
+            />
+            <Route path={"/signup"} render={() => <Signup />} />
+            <Route
+              path={"/newpost"}
+              render={() => (
+                <Newpost blogs={blogs} handleChange={handleBlogChange} />
+              )}
+            />
+            <Route exact path={"/"} render={() => <Home blogs={blogs} />} />
+            <Route
+              exact
+              path={"/blogs"}
+              render={() => (
+                <Blogs
+                  user={user}
+                  blogs={blogs?.filter(blog => blog?.user?.name === user)}
+                  handleChange={handleDelete}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/blogs/:id"
+              render={({ match }) => (
+                <SingleBlog
+                  handleChange={handleBlogChange}
+                  blog={blogById(match.params.id)}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/blogs/edit/:id"
+              render={({ match }) => (
+                <EditSingleBlog
+                  blog={blogById(match.params.id)}
+                  handleChange={handleBlogUpdate}
+                />
+              )}
+            />
           </main>
         </Container>
         <Footer

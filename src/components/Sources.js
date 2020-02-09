@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    textAlign: "left",
     "& > * + *": {
       display: "flex"
     }
@@ -18,8 +19,8 @@ export default function Sources(props) {
   if (sourcesList) {
     return (
       <>
-        <Typography variant="h6">Sources used: </Typography>
         <Typography className={classes.root}>
+          <Typography variant="h6">Sources used: </Typography>
           {sourcesList.map(item => (
             <Link
               key={item}
