@@ -5,9 +5,12 @@ import helloGBImg from "../img/hello-gb.png";
 
 import templateImg from "../img/flask-templates.png";
 import apacheImg from "../img/apache-download.png";
-import flaskImg from "../img/flask.png";
+import flaskImg from "../img/flask1.png";
 import errorFlaskImg from "../img/errorlogflask.png";
 import getLogImg from "../img/getlog.png";
+import sqlTestImg from "../img/sql-test.png";
+import helloWsgi from "../img/hello-wsgi.png";
+import wsgiFlaskPostgres from "../img/wsgi-flask-postgres.png";
 import part1Img from "../img/part1.png";
 import part2Img from "../img/part2.png";
 import part3Img from "../img/part3.png";
@@ -16,6 +19,7 @@ import Textandpicturegrid from "./Textandpicturegrid";
 import templateTiedostotImg from "../img/template-tiedostot.png";
 import Sources from "./Sources";
 import Text from "./Text";
+import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
@@ -159,6 +163,18 @@ const sectionE = {
     {
       src: flaskImg,
       title: "Kuva 1"
+    },
+    {
+      src: sqlTestImg,
+      title: "Kuva 2"
+    },
+    {
+      src: helloWsgi,
+      title: "Kuva 3"
+    },
+    {
+      src: wsgiFlaskPostgres,
+      title: "Kuva 4"
     }
   ],
   text: ``
@@ -197,7 +213,14 @@ export default function Homeworkone() {
           title={sectionE.title}
           imgs={sectionE.imgs}
           text={sectionE.text}
-        />{" "}
+        />
+        <Text
+          title="Koodi-tiedostot löytyvät osoitteesta 
+        "
+        ></Text>
+        <Link href="http://178.62.58.26/~tomas/flask/">
+          http://178.62.58.26/~tomas/flask/
+        </Link>
       </div>
 
       <Sources sourcesList={sourcesList}></Sources>

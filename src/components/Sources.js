@@ -31,6 +31,7 @@ export default function Sources(props) {
               {item}
             </Link>
           ))}
+          <Typography variant="h6">Tomas Kukk </Typography>
         </Typography>
       </>
     );
