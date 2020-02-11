@@ -15,7 +15,8 @@ import Home from "./Home";
 import EditSingleBlog from "./EditSingleBlog";
 import Homeworkone from "./Homeworkone";
 import Homeworktwo from "./Homeworktwo";
-import Homeworkthree from "./Homeworkthree";
+import Markdownblog from "./Markdownblog";
+import hmThreeMd from "./home-work-three.md";
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -81,13 +82,17 @@ export default function Blog() {
           <main>
             <Route path={"/homeworkone"} render={() => <Homeworkone />} />
             <Route path={"/homeworktwo"} render={() => <Homeworktwo />} />
-            <Route path={"/homeworkthree"} render={() => <Homeworkthree />} />
+            <Route
+              path={"/homeworkthree"}
+              render={() => <Markdownblog>{hmThreeMd}</Markdownblog>}
+            />
 
             <Route
+              exact
               path={"/login"}
               render={() => <Login handleChange={handleUserChange} />}
             />
-            <Route path={"/signup"} render={() => <Signup />} />
+            <Route exact path={"/signup"} render={() => <Signup />} />
             <Route
               path={"/newpost"}
               render={() => (

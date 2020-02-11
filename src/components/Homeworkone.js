@@ -1,14 +1,12 @@
 import Paper from "@material-ui/core/Paper";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import image01a from "../img/01a.png";
 import image01b from "../img/01b.png";
 import Textandpicturegrid from "./Textandpicturegrid";
 import Sources from "./Sources";
 import Text from "./Text";
 import Grid from "@material-ui/core/Grid";
-import Imgcard from "./Imgcard";
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {

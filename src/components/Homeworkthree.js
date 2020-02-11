@@ -2,7 +2,6 @@ import Paper from "@material-ui/core/Paper";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import helloGBImg from "../img/hello-gb.png";
-
 import templateImg from "../img/flask-templates.png";
 import apacheImg from "../img/apache-download.png";
 import flaskImg from "../img/flask1.png";

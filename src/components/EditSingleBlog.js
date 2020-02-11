@@ -1,5 +1,5 @@
 import Paper from "@material-ui/core/Paper";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Sources from "./Sources";
 import Grid from "@material-ui/core/Grid";
@@ -7,7 +7,7 @@ import Text from "./Text";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import { Container, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import blogService from "../services/Blogservice";
 import { Redirect } from "react-router-dom";
 

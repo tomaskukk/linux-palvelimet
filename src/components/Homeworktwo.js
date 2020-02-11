@@ -6,12 +6,9 @@ import successfullLog from "../img/successfull-log.png";
 import ack from "../img/ack.png";
 import pydf from "../img/pydf.png";
 import youtubeDl from "../img/youtube-dl.png";
-import Typography from "@material-ui/core/Typography";
 import Textandpicturegrid from "./Textandpicturegrid";
 import Sources from "./Sources";
 import Text from "./Text";
-import Grid from "@material-ui/core/Grid";
-import Imgcard from "./Imgcard";
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
