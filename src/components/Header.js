@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const { title, user, handleChange } = props;
+  const { sections, user, handleChange } = props;
   let loginOrLogoff = (
     <>
       <Link className={classes.toolbarLink} to="/signup">
@@ -87,7 +87,17 @@ export default function Header(props) {
         component="nav"
         variant="dense"
         className={classes.toolbarSecondary}
-      ></Toolbar>
+      >
+        {sections.map(section => (
+          <Link
+            key={section.title}
+            to={section.url}
+            className={classes.toolbarLink}
+          >
+            {section.title}
+          </Link>
+        ))}
+      </Toolbar>
     </React.Fragment>
   );
 }
