@@ -3,6 +3,7 @@ import scpPageImg from "../img/scp-sivusto.png";
 import reactPageGif from "../img/react-page.gif";
 
 const a = `
+# Sovelluksen julkaisu internetiin käyttäen Reactia, Nodea ja MongoDB:tä
 
 ## Huom! a ja b kohdat tehtiin heti tunnin jälkeen joten ne eivät ole enää relevantteja, jätän ne kuitenkin nyt tänne. Nämä olivat siis näkyvillä kotitehtävinä ennen kuin tehtävät päivittyi uusiin.
 
@@ -106,12 +107,13 @@ Tein tämän sovelluksen itselle tutuimmalla stackilla: React, Node ja MongoDB. 
 
 ![React sivu gif](${reactPageGif} "Sivuston toiminta")
 
-### Sources
+### Tomas Kukk
+
+#### Sources
 
 - http://terokarvinen.com/2020/linux-palvelimet-2020-alkukevat-kurssi-ict4tn021-3010/
 - https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart
 
-#### Tomas Kukk 
 `;
 
 export default a;

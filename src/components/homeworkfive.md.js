@@ -3,6 +3,8 @@ import apacheCurl from "../img/curl-apache.png";
 import frisbeeKukkto from "../img/frisbee-working.png";
 
 const a = `
+# Uuden sovelluksen julkaisu subdomainilla käyttäen Mongoa, Flaskia ja mod_wsgitä.
+
 ## x) Propellivaihtoehto, vapaaehtoinen, korvaa muut kohdat. Julkaise hyödyllinen Flask-ohjelma, joka käyttää tietokantaa ja lomakkeita. Hyöty voi olla pienikin, mutta ohjelman tulee tehdä jotain järkevää. (OK: äänestä paras kissankuva, ilmoittaudu arpajaisiin, nallekarhujen lainausjärjestelmä. Ei käy: lue esimerkkitietueita foo ja bar tietokannasta.) Hauskaa koodailua!
 
 Sain idean tallettaa frisbeegolf-kierroksiani tietokantaan ja näyttämään ne sivulla. Aloitin tämän projektin ja sen dokumentaation kirjoittamisen klo 10.00
@@ -187,7 +189,8 @@ Projekti ja dokumentaatio oli nyt valmis klo 12.33.
 
 ### Tomas Kukk
 
-Sources:
+#### Sources:
+
 http://terokarvinen.com/2020/deploy-python-flask-to-production/
 http://docs.mongoengine.org/projects/flask-mongoengine/en/latest/
 http://docs.mongoengine.org/guide/connecting.html

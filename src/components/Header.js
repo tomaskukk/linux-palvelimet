@@ -80,7 +80,8 @@ export default function Header(props) {
             {"<Home />"}
           </Link>
         </Typography>
-        {loginOrLogoff}
+        {/*         {loginOrLogoff}
+         */}{" "}
       </Toolbar>
 
       <Toolbar

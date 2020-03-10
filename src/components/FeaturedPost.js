@@ -11,13 +11,14 @@ import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles({
   card: {
-    display: "flex"
+    display: "flex",
+    minHeight: "220px"
   },
   cardDetails: {
     flex: 1
   },
   cardMedia: {
-    width: 160
+    width: 200
   }
 });
 
@@ -29,17 +30,15 @@ export default function FeaturedPost(props) {
       <Card className={classes.card}>
         <div className={classes.cardDetails}>
           <CardContent>
-            <Typography component="h2" variant="h5">
+            <Typography component="h2" variant="h6">
               {post.title}
             </Typography>
-            <Typography variant="subtitle1" color="textSecondary">
-              {post.date}
-            </Typography>
+
             <Typography variant="subtitle1" paragraph>
-              {post.user.name}
+              {"Tomas Kukk"}
             </Typography>
             <Typography variant="subtitle1" color="primary">
-              <Link className={classes.link} to={`/blogs/${post.id}`}>
+              <Link className={classes.link} to={post.uri}>
                 Read more..
               </Link>
             </Typography>

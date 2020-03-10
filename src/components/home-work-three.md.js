@@ -8,7 +8,7 @@ import modWsgiHelloWorldImg from "../img/hello-wsgi.png";
 import wsgiPostgresFlaskImg from "../img/wsgi-flask-postgres.png";
 
 const t = `
-# Deploying Flask application using postgres with mod_wsgi
+# Sovelluksen julkaisu käyttäen Flaskia, Postgresia ja mod_wsgi:tä
 
 ## a) Asenna Apache, laita käyttäjien kotisivut (http://example.com/~tero) toimimaan. Testaa esimerkkikotisivulla
 
@@ -235,7 +235,9 @@ restart ja ohjelma toimi halutusti.
 
 [Lopulliset tiedostot](http://178.62.58.26/~tomas/flask)
 
-### Sources
+### Tomas Kukk
+
+#### Sources
 
 - https://linuxize.com/post/how-to-install-flask-on-ubuntu-18-04/
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
@@ -248,6 +250,5 @@ restart ja ohjelma toimi halutusti.
 - https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
 - https://blog.theodo.com/2017/03/developping-a-flask-web-app-with-a-postresql-database-making-all-the-possible-errors/
 
-#### Tomas Kukk 
 `;
 export default t;

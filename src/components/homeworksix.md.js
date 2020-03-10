@@ -1,6 +1,7 @@
 import saveCourse from "../img/savecourse.png";
 
 const a = `
+# Sovelluksen päivittäminen käyttäen mod_wsgi:tä
 
 ### a) Tietokanta wepissä. Tee oma yksinkertainen, tietokantaa käyttävä ohjelma. Ohjelmalla tulee olla jokin käyttötarkoitus. Voit tehdä ohjelman muokkaamalla Teron koodia (muista lähdeviite).
 
@@ -66,6 +67,12 @@ Tämän jälkeen sain edelleen internal server erroria joten meni lukemaan logej
 
 Olin unohtanut poistaa app.run komennon koodin lopusta. Poistin tämän ja kokeilin vielä kerran käynnistää ohjelman uudelleen aiemmalla komennolla. Tämän jälkeen sivusto toimi halutusti.
 Uuden sivuston voi tarkistaa osoitteesta frisbee.kukkto.com/rounds. Aloitin sivustolle myös delete napin lisäykset, mutta niiden toiminnallisuus ei vielä ole kunnossa.
+
+### Tomas Kukk
+
+#### Sources:
+
+None used
 
 `;
 

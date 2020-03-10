@@ -9,6 +9,7 @@ import youtubeDl from "../img/youtube-dl.png";
 import Textandpicturegrid from "./Textandpicturegrid";
 import Sources from "./Sources";
 import Text from "./Text";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
@@ -95,6 +96,9 @@ export default function Homeworkone() {
   return (
     <Paper className={classes.homeworkone}>
       <div className={classes.root}>
+        <Typography align="center" variant="h4">
+          Ssh:n asennus ubuntulle ja sen käyttäminen
+        </Typography>
         <Textandpicturegrid
           size={6}
           title={sectionA.title}

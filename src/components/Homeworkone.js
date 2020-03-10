@@ -7,6 +7,7 @@ import Textandpicturegrid from "./Textandpicturegrid";
 import Sources from "./Sources";
 import Text from "./Text";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles(theme => ({
   homeworkone: {
@@ -126,6 +127,9 @@ export default function Homeworkone() {
   return (
     <Paper className={classes.homeworkone}>
       <div className={classes.root}>
+        <Typography align="center" variant="h4">
+          Ubuntun asentaminen livetikulle
+        </Typography>
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <Textandpicturegrid

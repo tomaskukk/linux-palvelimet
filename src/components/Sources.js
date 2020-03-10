@@ -20,6 +20,7 @@ export default function Sources(props) {
     return (
       <>
         <Typography className={classes.root}>
+          <Typography variant="h6">Tomas Kukk </Typography>
           <Typography variant="h6">Sources used: </Typography>
           {sourcesList.map(item => (
             <Link
@@ -31,7 +32,6 @@ export default function Sources(props) {
               {item}
             </Link>
           ))}
-          <Typography variant="h6">Tomas Kukk </Typography>
         </Typography>
       </>
     );

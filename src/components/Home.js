@@ -11,8 +11,36 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Home({ blogs }) {
-  console.log(blogs);
+export default function Home() {
+  const blogs = [
+    {
+      title: "Ubuntun asentaminen livetikulle",
+      uri: "/homeworkone"
+    },
+    {
+      title: "Ssh:n asennus ubuntulle ja sen käyttäminen",
+      uri: "/homeworktwo"
+    },
+    {
+      title: "Sovelluksen julkaisu käyttäen Flaskia, Postgresia ja mod_wsgi:tä",
+      uri: "/homeworkthree"
+    },
+    {
+      title:
+        "Sovelluksen julkaisu internetiin käyttäen Reactia, Nodea ja MongoDB:tä",
+      uri: "/homeworkfour"
+    },
+    {
+      title:
+        "Uuden sovelluksen julkaisu subdomainilla käyttäen Mongoa, Flaskia ja mod_wsgitä",
+      uri: "/homeworkfive"
+    },
+    {
+      title: "Sovelluksen päivittäminen käyttäen mod_wsgi:tä",
+      uri: "/homeworksix"
+    }
+  ];
+
   const classes = useStyles();
   return (
     <React.Fragment>
