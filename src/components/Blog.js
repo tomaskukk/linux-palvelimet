@@ -20,6 +20,8 @@ import hmThreeMd from "./home-work-three.md";
 import hmFourMd from "./Homeworkfour.md.js";
 import hmFiveMd from "./homeworkfive.md.js";
 import hmSixMd from "./homeworksix.md.js";
+import hmSevenMd from "./homeworkseven.md.js";
+
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -110,6 +112,11 @@ export default function Blog() {
             <Route
               path={"/homeworksix"}
               render={() => <Markdownblog>{hmSixMd}</Markdownblog>}
+            />
+
+<Route
+              path={"/homeworkseven"}
+              render={() => <Markdownblog>{hmSevenMd}</Markdownblog>}
             />
 
             <Route

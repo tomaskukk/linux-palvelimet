@@ -38,6 +38,10 @@ export default function Home() {
     {
       title: "Sovelluksen päivittäminen käyttäen mod_wsgi:tä",
       uri: "/homeworksix"
+    },
+    {
+      title: "LAMP sovelluskerroksen asennus ja testaaminen",
+      uri: "/homeworkseven"
     }
   ];
 
