@@ -42,6 +42,10 @@ export default function Home() {
     {
       title: "LAMP sovelluskerroksen asennus ja testaaminen",
       uri: "/homeworkseven"
+    },
+    {
+      title: "Ubuntulla kuormitusten seuraaminen",
+      uri: "/homeworkeigth"
     }
   ];
 

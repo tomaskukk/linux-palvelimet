@@ -21,7 +21,7 @@ import hmFourMd from "./Homeworkfour.md.js";
 import hmFiveMd from "./homeworkfive.md.js";
 import hmSixMd from "./homeworksix.md.js";
 import hmSevenMd from "./homeworkseven.md.js";
-
+import hmEigthMd from "./homeworkeigth.md.js";
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -36,7 +36,8 @@ const sections = [
   { title: "Homework four", url: "/homeworkfour" },
   { title: "Homework five", url: "/homeworkfive" },
   { title: "Homework six", url: "/homeworksix" },
-  { title: "Homework seven", url: "/homeworkseven" }
+  { title: "Homework seven", url: "/homeworkseven" },
+  { title: "Homework eigth", url: "/homeworkeigth" }
 ];
 
 export default function Blog() {
@@ -114,9 +115,14 @@ export default function Blog() {
               render={() => <Markdownblog>{hmSixMd}</Markdownblog>}
             />
 
-<Route
+            <Route
               path={"/homeworkseven"}
               render={() => <Markdownblog>{hmSevenMd}</Markdownblog>}
+            />
+
+            <Route
+              path={"/homeworkeigth"}
+              render={() => <Markdownblog>{hmEigthMd}</Markdownblog>}
             />
 
             <Route
