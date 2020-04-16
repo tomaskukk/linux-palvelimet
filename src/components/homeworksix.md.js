@@ -70,9 +70,9 @@ Uuden sivuston voi tarkistaa osoitteesta frisbee.kukkto.com/rounds. Aloitin sivu
 
 ### Tomas Kukk
 
-#### Sources:
+#### Sources
 
-None used
+- http://terokarvinen.com/2020/linux-palvelimet-2020-alkukevat-kurssi-ict4tn021-3010/#laksyt
 
 `;
 

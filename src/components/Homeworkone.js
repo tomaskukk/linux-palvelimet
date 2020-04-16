@@ -31,7 +31,8 @@ const sourcesList = [
   "https://github.com/microsoft/vscode/blob/master/LICENSE.txt",
   "https://github.com/hishamhm/htop",
   "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html",
-  "http://www.clamav.net/"
+  "http://www.clamav.net/",
+  "http://terokarvinen.com/2020/linux-palvelimet-2020-alkukevat-kurssi-ict4tn021-3010/#laksyt"
 ];
 
 const sectionA = {

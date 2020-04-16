@@ -244,6 +244,10 @@ Average:        all     12,71      0,00      2,20      0,62      0,00     84,47
 
 Kuormitus näyttäisi siltä, että se on melko tasaista koko projektin aikana. Kuormituspiikkiä ei ole näkyvissä. Prosessori on ollut suurimmaksi osaksi odottamassa, että sille syötetään lisää prosesseja ajettavaksi. 
 
+#### Sources
+
+- http://terokarvinen.com/2020/linux-palvelimet-2020-alkukevat-kurssi-ict4tn021-3010/#laksyt
+
 `;
 
 export default a;
